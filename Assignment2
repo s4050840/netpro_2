@@ -1,0 +1,263 @@
+
+package javabrowserchanaspat;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.URL;
+import java.net.URLConnection;
+import java.util.Enumeration;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+
+public class chanaspat extends javax.swing.JFrame {
+
+    public chanaspat() {
+        initComponents();
+    }
+
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
+    private void initComponents() {
+
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        urltextfram1 = new javax.swing.JTextField();
+        urltextfram2 = new javax.swing.JTextField();
+        search = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        display2 = new javax.swing.JEditorPane();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        Process = new javax.swing.JTextArea();
+        jLabel3 = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        display1 = new javax.swing.JEditorPane();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Chanaspat Phiasai s4050840@kmitl.ac.th - Java Web Browser (Network Programming Class Assignment)");
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel1.setText("URL1 ");
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel2.setText("URL2");
+
+        urltextfram1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                urltextfram1ActionPerformed(evt);
+            }
+        });
+
+        search.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        search.setText("Search");
+        search.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchActionPerformed(evt);
+            }
+        });
+
+        jScrollPane2.setViewportView(display2);
+
+        Process.setColumns(20);
+        Process.setRows(5);
+        jScrollPane3.setViewportView(Process);
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel3.setText("Process");
+
+        jScrollPane4.setViewportView(display1);
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane3)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 436, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(urltextfram1, javax.swing.GroupLayout.PREFERRED_SIZE, 436, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel2)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(search, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                                .addComponent(urltextfram2, javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 404, Short.MAX_VALUE)))
+                                        .addGap(9, 9, 9)))))
+                        .addGap(26, 26, 26))))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(42, 42, 42)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(urltextfram1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(urltextfram2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(search, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(11, 11, 11)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 194, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        pack();
+    }// </editor-fold>                        
+
+    private void urltextfram1ActionPerformed(java.awt.event.ActionEvent evt) {                                             
+
+    }                                            
+
+    private void searchActionPerformed(java.awt.event.ActionEvent evt) {                                       
+      Thread threadA; 
+        threadA = new Thread(new Runnable(){
+        @Override
+        public void run(){  
+            try
+            {
+                Process.append("Thread 1 : Start \n");
+                Process.append("Thread 1 : Getpage url = "+urltextfram1.getText()+"\n");
+                display1.setPage(urltextfram1.getText());
+                     
+                //HTTP response header      
+                try {
+                    URL obj = new URL(urltextfram1.getText());
+                    URLConnection conn = obj.openConnection();
+                    Map<String, List<String>> map = conn.getHeaderFields();
+ 
+                    Process.append("_____________________________\nThread 1 Response Header...\n");
+ 
+                    for (Map.Entry<String, List<String>> entry : map.entrySet()) {
+                        Process.append("Thread 1 : " + entry.getKey() 
+                           + " : " + entry.getValue()+"\n");
+                    }
+ 
+                Process.append("Get Response Header By Thread 1 ...\n");
+                String server = conn.getHeaderField("Server");
+ 
+                if (server == null) {
+                    Process.append("Thread 1 : Server is not found!\n");
+                } else {
+		Process.append("Server - " + server+"\n");
+                }
+ 
+                Process.append("Done\n");
+ 
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                // end print header
+                
+                
+                Process.append("Thread 1 : Showed page \n");  
+                Process.append("Thread 1: Finished \n");
+           }
+                catch(Exception e){
+                    display1.setText("Error: " +e);
+                }
+      } 
+   });
+        threadA.start(); 
+       
+       Thread threadB; 
+        threadB = new Thread(new Runnable(){
+        @Override
+        public void run(){
+            try
+            {
+                Process.append("Thread 2 : Start \n");
+                Process.append("Thread 2 : Getpage url = "+urltextfram2.getText()+"\n");
+                display2.setPage(urltextfram2.getText());
+                     
+                //HTTP response header      
+                try {
+                    URL obj = new URL(urltextfram2.getText());
+                    URLConnection conn = obj.openConnection();
+                    Map<String, List<String>> map = conn.getHeaderFields();
+ 
+                    Process.append("_____________________________\nThread 2 : Response Header...\n");
+ 
+                    for (Map.Entry<String, List<String>> entry : map.entrySet()) {
+                        Process.append("Thread 2 : " + entry.getKey() 
+                           + " : " + entry.getValue()+"\n");
+                    }
+ 
+                Process.append("Get Response Header By Thread 2 ...\n");
+                String server = conn.getHeaderField("Server");
+ 
+                if (server == null) {
+                    Process.append("Thread 2: Server is not found!\n");
+                } else {
+		Process.append("Server - " + server+"\n");
+                }
+ 
+                Process.append("Done\n");
+ 
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                // end print header
+                
+                Process.append("Thread 2 : Showed page \n");  
+                Process.append("Thread 2 : Finished \n");
+           }
+                catch(Exception e){
+                    display1.setText("Error: " +e);
+                }
+      } 
+   });
+        threadB.start(); 
+        
+    }                                      
+
+ 
+   
+    public static void main(String args[]) {
+     
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new chanaspat().setVisible(true);
+            }
+        });
+    }
+
+    // Variables declaration - do not modify                     
+    private javax.swing.JTextArea Process;
+    private javax.swing.JEditorPane display1;
+    private javax.swing.JEditorPane display2;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JButton search;
+    private javax.swing.JTextField urltextfram1;
+    private javax.swing.JTextField urltextfram2;
+    // End of variables declaration                   
+}
